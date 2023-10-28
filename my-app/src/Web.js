@@ -1,6 +1,5 @@
 import './Web.css'
-import button from '../src/bottoms.png'
-import React, {useState, useRef} from "react"; 
+import React, {useState, useRef} from "react" 
 import {useClickOutside} from "./useClickOutside"
 function Web() {
     const[isOpen,setOpen] = useState(false);
@@ -10,8 +9,8 @@ function Web() {
     });
     return (
 <header className="header">
-    <button className="menu_bottom" onClick={() => setOpen(!open)}>
-    <nav className={`menu ${ isOpen ? "active" : ""}`}>
+    <button className="menu_bottom" onClick={() => setOpen(!isOpen)}>
+    <nav className={`menu ${ isOpen?"active" : ""}`} ref={menuRef}>
         <div className = 'bottom_box'>
             <button>
             </button>
