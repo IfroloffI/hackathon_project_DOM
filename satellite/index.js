@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 
 const printer = require("./routes/prints");
-app.use("", printer)
+app.use("/", printer);
+
+const data = require("./routes/data");
+app.use("/data", data);
 
 app.listen(3002, () => {
 
