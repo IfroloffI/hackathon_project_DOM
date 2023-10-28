@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const printer = require("./routes/Prints");
+const printer = require("./routes/prints");
 app.use("", printer)
 
 app.listen(3002, () => {
