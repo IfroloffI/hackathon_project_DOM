@@ -1,0 +1,32 @@
+.sputnik{
+    height: 50px;
+    width: 200px;
+    background-color: aqua;
+
+}
+
+.Home_component_header{
+    display: flex;
+    flex-direction: column;
+
+}
+.planet{
+    display: flex;
+    align-items: center;
+}
+.satelite img{
+    height: 300px;
+    width: 300px;
+    background: transparent;
+  }
+  
+  .orbit {
+    animation: spin-right 5s 5000 linear;
+    transform-origin: 150px 150px 0;
+  }
+  
+  @keyframes spin-right {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
