@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Work+Sans:ital,wght@0,400;0,600;1,700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+.Change_component{
+    overflow-y: hidden;
+}
+
+.list_box{
+ width: 30px;
+ margin-right: auto;
+ margin-left: 50%;
+ text-align: left;
+
+
+}
+
+
+.menu{
+    position:absolute;
+    right: 10px;
+    width: 400px;
+    bottom: 70px;
+    padding: 25px;
+    background-color:rgb(255, 255, 255);
+    border: 4px solid cornflowerblue;
+    border-radius: 10px;
+    opacity: 0; 
+    transform: transLateY(-10px);
+    visibility: hidden; 
+    transition: 0.3s;
+}
+
+
+.menu.active{
+    transform: transLateY(0);
+    opacity:1;
+    visibility: visible;
+}
+
+.menu_list{
+    margin:0;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menu_item:nth-child(n+1){
+    margin-top: 10px;
+}
+
+.menu_item{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor:pointer;
+
+}
+.bottom_box{
+    position: absolute;
+    margin-top: 12px;
+    height: 130px;
+    width: 35%;
+    margin-right: auto;
+    margin-left: 0;
+    overflow-y: hidden;
+}
