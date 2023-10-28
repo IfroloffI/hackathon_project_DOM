@@ -1,23 +1,24 @@
 const express = require("express");
 const router = express.Router();
 
-var speed = 1;
-const changeSpeed = (newSpeed) => {
-    if(Math.abs(newSpeed - speed) == 0) {
-        speed = newSpeed;
-    }
-}
-var height = 4;
+let speed = 1;
+let height = 4;
+let temp = 1889;
+let isWorked = true;
 
-const changeHeight = (newHeight) => {
-    if(Math.abs(newHeight - height) == 0) {
-        height = newHeight;
+const checkTemp = async () => {
+    while (true) {
+        if (temp < 1500 && temp > -50) {
+            isWorked = true;
+            console.log(isWorked);
+        }
+        else {
+            isWorked = false;
+        }
     }
-}
-var temp = 1889;
+};
 
 router.get("/", (req, res) => {
-
     res.json({
         "speed" : speed,
         "height" : height,
@@ -25,12 +26,11 @@ router.get("/", (req, res) => {
     });
 });
 
-router.put("/", async (req, res) => {
+router.put("/", (req, res) => {
     const data = req.body;
-    res.json(data);
-    //await changeSpeed(data.speed);
-    //await changeHeight(data.height);
-    //res.text("Sucess");
+    speed = data.speed;
+    height = data.height;
 });
 
+await checkTemp();
 module.exports = router;
