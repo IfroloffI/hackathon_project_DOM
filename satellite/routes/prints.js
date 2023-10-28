@@ -1,11 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-let speed = 5;
-router.get("/", (req, res) => {
-    res.json({ data: speed });
+router.get("", (req, res) => {
+
+    res.json({"text":"Arseniy pidoras"});
 });
-router.put("/", (req, res) => {
-    res.json({ data: speed });
-});
+
 module.exports = router;

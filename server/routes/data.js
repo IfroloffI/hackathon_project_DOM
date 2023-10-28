@@ -9,7 +9,13 @@ router.get("/", async (req, res) => {
             });
 });
 
-
+router.get("/changeData", async (req, res) => {
+    fetch('http://localhost:3002/data')
+        .then((response) => response.text())
+        .then((body) => {
+            res.json(body);
+        });
+});
 
 
 module.exports = router;
