@@ -1,0 +1,16 @@
+module.exports = (sequelize, DataTypes) => {
+
+    const Table = sequelize.define("train", {
+
+        title: {
+            type: DataTypes.STRING, 
+            allowNull: false,
+        },
+
+        text: {
+            type: DataTypes.STRING, 
+            allowNull: false,
+        },
+    });
+    return Table;
+};
