@@ -5,8 +5,8 @@ const port = 3001;
 app.use(express.json());
 
 // Routers
-//const postRouter = require("./routes/posts");
-//app.use("/posts", postRouter);
+const dataRouter = require("./routes/data");
+app.use("/data", dataRouter);
 
 app.listen(port, () => {
     console.log("Server is running on port " + port);
