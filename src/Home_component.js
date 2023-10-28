@@ -1,27 +1,26 @@
-import logo from './logo.svg';
-import satelite from './img/satelite.jpg'
-import planet from './img/planet.jpg'
-import './App.css';
+import satelite from '../src/img/satelite.png'
+import planet from '../src/img/planet_orange.png'
 import './Home_component.css'
 
 function Home_component() {
     return (
-      <body className="Home_component">  
-        <main className="Home_component_header">
-          <img src={logo} className="App-logo planet" alt="logo" />
+      <div className="Home_component">  
+        <div className="Home_component_header">
+        
+              <div className='planet spin_right'>
+                  <img src = {planet}></img>
+              </div>
+              
+              <div className="satelite spin_left spin_onSome">
+                  <img src = {satelite}></img>
+                  </div>
 
 
-            <div>
-            <div className="satelite">
-                <img src = {satelite}></img>
-            </div>
-            <div>
-                <img src = {planet}></img>
-            </div>
-            </div>
+
             
-        </main>
-      </body>
+            
+        </div>
+      </div>
     );
   }
   export default Home_component;

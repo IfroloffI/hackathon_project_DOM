@@ -1,32 +1,65 @@
-.sputnik{
-    height: 50px;
-    width: 200px;
-    background-color: aqua;
 
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: sans-serif;
 }
 
 .Home_component_header{
     display: flex;
-    flex-direction: column;
+    justify-content: left;
+    padding: 100px;
+    align-items: center;
+   
+    height: 100vh;
 
 }
-.planet{
+
+.Home_component{
+  height: 100vh;
+}
+
+.planet img{
+    width: 400px;
+    height: 400px;
     display: flex;
     align-items: center;
 }
 .satelite img{
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     background: transparent;
+    transform: rotate(-90deg);
   }
   
-  .orbit {
-    animation: spin-right 5s 5000 linear;
-    transform-origin: 150px 150px 0;
+  .spin_right {
+    animation: spin-right 240s infinite linear;
   }
+
+  .spin_left{
+    animation: spin-left 240s infinite linear;
   
+  }
+  .spin_onSome{
+    animation: spin-left 120s infinite linear;
+    transform-origin: -80% center;
+  }
+
   @keyframes spin-right {
+    0% {
+      transform: rotate(0deg);
+    }
     100% {
       transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-left {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
     }
   }
