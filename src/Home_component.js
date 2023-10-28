@@ -6,7 +6,7 @@ import './Home_component.css'
 
 function Home_component() {
     return (
-      <body className="Home_component">
+      <body className="Home_component">  
         <main className="Home_component_header">
           <img src={logo} className="App-logo planet" alt="logo" />
 
