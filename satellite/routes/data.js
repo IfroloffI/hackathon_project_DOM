@@ -3,23 +3,34 @@ const router = express.Router();
 
 let speed = 1;
 let height = 4;
-let temp = 1889;
+let temp = 1000;
 let isWorked = true;
 let inDarkZone = false;
 let inMetiorits = false;
 
+function reboot() {
+    let speed = 1;
+    let height = 4;
+    let temp = 1000;
+    let isWorked = true;
+}
+
 loop();
 function loop() {
+    checkInAnyZone();
+    checkTemp();
+    if(!isWorked) {
+        speed = 1;
+    }
     setTimeout(() => {
-        console.log("Delayed for 1 second.");
         loop()
     }, 1000);
 }
 
-const checkInAnyZone = async () => {
+function checkInAnyZone(){
     if (isWorked) {
         temp = 1500 + parseInt(Math.pow((-1), parseInt(Math.random() * 100)) * 100 * Math.random());
-        if (!inDarkZone) {
+        if (inDarkZone) {
             temp -= 500;
             console.log(temp);
         }
@@ -30,18 +41,12 @@ const checkInAnyZone = async () => {
             }
         }
     }
-};
+}
 
-const isWorking = async () => {
-    if (!isWorked) {
-        speed = 1;
-    }
-};
-
-const checkTemp = async () => {
+function checkTemp(){
     if (temp < 1500 && temp > -50) {
         isWorked = true;
-        console.log(isWorked);
+        console.log(temp);
     } else {
         isWorked = false;
     }
