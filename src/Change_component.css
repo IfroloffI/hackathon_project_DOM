@@ -2,17 +2,21 @@
 
 *{
     box-sizing: border-box;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'PT Sans', sans-serif;
 }
 .Change_component{
     overflow-y: hidden;
 }
 
 .list_box{
- width: 30px;
+ width: 100px;
  margin-right: auto;
  margin-left: 50%;
  text-align: left;
-
+ display: flex;
+ flex-direction: row;
 
 }
 
@@ -21,7 +25,7 @@
     position:absolute;
     right: 10px;
     width: 400px;
-    bottom: 70px;
+    bottom: 15px;
     padding: 25px;
     background-color:rgb(255, 255, 255);
     border: 4px solid cornflowerblue;
@@ -41,9 +45,19 @@
 
 .menu_list{
     margin:0;
-    width: 100%;
+    width: 100px;
     padding: 0;
     list-style-type: none;
+
+}
+
+.menu_list_res{
+    margin-left:20px;
+    width: 200px;
+    padding: 0;
+    list-style-type: none;
+    text-wrap: none;
+
 }
 
 .menu_item:nth-child(n+1){
@@ -52,17 +66,104 @@
 
 .menu_item{
     font-family: 'PT Sans', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
-    cursor:pointer;
+    text-wrap: none;
+   
 
 }
 .bottom_box{
     position: absolute;
-    margin-top: 12px;
+   
     height: 130px;
     width: 35%;
     margin-right: auto;
     margin-left: 0;
-    overflow-y: hidden;
+    cursor:pointer;
+    
+}
+
+
+.bottom_box_move1{
+    display:inline-flex; 
+    /* border: 1px solid black; */
+    height:50%;
+    width: 100%;
+    margin-top: 10px; 
+ }
+
+ .bottom_box_Up{
+    border: 1px solid rgb(255, 255, 255);
+    margin-right:16px;
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content: space-around;
+    
+}
+
+.Up{
+    cursor:pointer;
+    width:100%;
+    display: inline-block;
+    border-radius: 40px;
+}
+
+
+.Down{
+    margin-left:20px;
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content: space-around;
+    border-radius: 40px;
+    cursor: pointer;
+    }
+
+.bottom_box_move{
+    display:inline-flex;
+    height:50%;
+    width: 100%;
+    /* border: 1px solid purple;  */
+    margin-top: 10px;
+    }
+
+.Speed{
+    border: 1px solid rgb(255, 255, 255);
+    margin-right:15px;
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content: space-around;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.Slow{
+    border: 1px solid rgb(255, 255, 255);
+    margin-left:20px;
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content: space-around;
+    border-radius: 40px;
+    cursor: pointer;
+    }
+
+
+.height{
+    position:absolute;
+    top: 10px;
+    left:70px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+ 
+}
+.speed{
+    position: absolute;
+    bottom: 5px;
+    left:70px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+    
 }
