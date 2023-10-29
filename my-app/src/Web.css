@@ -42,7 +42,7 @@
     background-color:rgb(255, 255, 255);
     border: 4px solid cornflowerblue;
     border-radius: 10px;
-    opacity: 0; 
+     opacity: 0;  
     transform: transLateY(-10px);
     visibility: hidden; 
     transition: 0.3s;
@@ -73,11 +73,92 @@
     cursor:pointer;
 
 }
-.bottom_box{
+
+.bottom_box{  
     position: absolute;
-    margin-top: 12px;
     height: 130px;
     width: 35%;
-    margin-right: auto;
-    margin-left: 0;
+    /* border: 1px solid rgb(43, 4, 52); */
+    bottom:35px;
+}
+
+.bottom_box_move1{
+    display:inline-flex; 
+    /* border: 1px solid black; */
+    height:50%;
+    width: 100%;
+    margin-top: 10px; 
+ }
+
+ .bottom_box_Up{
+    border: 1px solid rgb(255, 255, 255);
+    margin-right:16px;
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content: space-around;
+}
+
+.button_Up{
+    cursor:pointer;
+    width:100%;
+    display: inline-block;
+
+}
+
+
+.bottom_box_Down{
+    margin-left:20px;
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content: space-around;
+    }
+
+.bottom_box_move{
+    display:inline-flex;
+    height:50%;
+    width: 100%;
+    /* border: 1px solid purple;  */
+    margin-top: 10px;
+    }
+
+.bottom_box_Speed{
+    border: 1px solid rgb(255, 255, 255);
+    margin-right:15px;
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content: space-around;
+}
+
+.bottom_box_Slow{
+    border: 1px solid rgb(255, 255, 255);
+    margin-left:20px;
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content: space-around;
+    }
+.button_Slow{
+    display:flex;
+    border:none;
+    color:inherit;
+}
+
+.height{
+    position:absolute;
+    top:1px;
+    left:70px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    cursor:pointer;
+}
+.speed{
+    position: absolute;
+    bottom: -7px;
+    left:70px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    cursor:pointer;
 }
