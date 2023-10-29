@@ -1,8 +1,8 @@
 import satelite from '../src/img/satelite.png'
 import satelite_broken from '../src/img/satelite_broken.png'
 import planet from '../src/img/planet_blue.png'
-import meteor1 from './img/meteo1.png'
-import meteor2 from './img/meteo2.png'
+import meteor1 from './img/meteor1.png'
+import meteor2 from './img/meteor2.png'
 import './Home_component.css'
 
 function Home_component() {
