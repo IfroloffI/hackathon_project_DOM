@@ -1,6 +1,8 @@
 import satelite from '../src/img/satelite.png'
 import satelite_broken from '../src/img/satelite_broken.png'
 import planet from '../src/img/planet_blue.png'
+import meteor1 from './img/meteo1.png'
+import meteor2 from './img/meteo2.png'
 import './Home_component.css'
 
 function Home_component() {
@@ -35,6 +37,9 @@ function Home_component() {
               <div className='planet spin_right'>
                   <img src = {planet} alt={"planet"}></img>
               </div>
+
+              <img className = "meteor meteor1" scr = {meteor1} alt = {"meteor1"}></img>
+              <img className = "meteor meteor2" scr = {meteor2} alt = {"meteor2"}></img>
 
               
                 

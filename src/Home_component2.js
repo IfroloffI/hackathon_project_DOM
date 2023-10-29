@@ -13,14 +13,6 @@ import Change_component from './Change_component';
 
 
 function Home_component2(){
-    const [listData, setListData] = useState("");
-    useEffect(() => {
-      const getData = () => {axios.get("http://localhost:3001/data/").then((response) => {
-        setListData(response.data);
-        console.log(listData);
-      });}
-      getData();
-    }, []);
     return (
       <div className="Home_component body">
                   <img className='space' src = {space} alt = {"space"}></img>
@@ -54,4 +46,4 @@ function Home_component2(){
       </div>
     );
   }
-export default Home_component2
+export default Home_component2;

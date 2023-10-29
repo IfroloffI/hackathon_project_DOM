@@ -1,8 +1,21 @@
 import './Change_component.css'
-import React, {useState, useRef} from "react" 
+import React, {useRef} from "react" 
 import {useClickOutside} from "./useClickOutside"
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function Change_component() {
+  const [listData, setListData] = useState({});
+    useEffect(() => {
+      setInterval(
+        () => {
+                axios.get("http://localhost:3001/data/").then((resp) => {
+        setListData(JSON.parse(resp.data));
+      }, );
+
+        }, 500
+      )
+    }, []);
 
     const[isOpen,setOpen] = useState(false);
     const menuRef = useRef(null);
@@ -95,11 +108,11 @@ function Change_component() {
                     <li className='menu_item'>connection:</li>
                   </ul>
                   <ul className='menu_list_res'>
-                    <li className='menu_item'>OUR</li>
-                    <li className='menu_item'>OUR</li>
-                    <li className='menu_item'>OUR</li>
-                    <li className='menu_item'> OUR</li>
-                    <li className='menu_item'>OUR</li>
+                    <li className='menu_item'>{listData.height}</li>
+                    <li className='menu_item'>{listData.temperature}</li>
+                    <li className='menu_item'>{listData.counter}</li>
+                    <li className='menu_item'> {listData.speed}</li>
+                    <li className='menu_item'>{listData.connect ? "Sucess": "Failed"}</li>
                   </ul>
                 </div>
             </nav>
