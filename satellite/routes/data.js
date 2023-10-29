@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 let speed = 1;
-let height = 4;
-let temp = 1000;
+let height = 10;
+let temp = 0;
 let isWorked = true;
 let inDarkZone = false;
 let inMetiorits = false;
@@ -16,18 +16,17 @@ function reboot() {
 }
 
 loop();
+
 function loop() {
     checkInAnyZone();
     checkTemp();
-    if(!isWorked) {
-        speed = 1;
-    }
+
     setTimeout(() => {
         loop()
     }, 1000);
 }
 
-function checkInAnyZone(){
+function checkInAnyZone() {
     if (isWorked) {
         temp = 1500 + parseInt(Math.pow((-1), parseInt(Math.random() * 100)) * 100 * Math.random());
         if (inDarkZone) {
@@ -43,7 +42,7 @@ function checkInAnyZone(){
     }
 }
 
-function checkTemp(){
+function checkTemp() {
     if (temp < 1500 && temp > -50) {
         isWorked = true;
         console.log(temp);
