@@ -2,9 +2,9 @@ import satelite from '../src/img/satelite.png'
 import satelite_broken from '../src/img/satelite_broken.png'
 import planet from '../src/img/planet_blue.png'
 import sun from '../src/img/sun.png'
-import space from '../src/img/space.png'
-import { Component, React } from 'react';
+import space from '../src/img/space.png';
 import axios from "axios";
+import React from "react";
 import { useEffect, useState } from "react";
 import Change_component from './Change_component';
 
@@ -12,28 +12,14 @@ import Change_component from './Change_component';
 
 
 
-export default class Home_component extends Component {
-
-  
-
-    constructor(props){
-      super(props)
-
-      this.state = {
-        isBroken: false
-      }
-    }
-
-
-
-    render(){
-    const isBroken = this.state.isBroken;
-    let sat_dop="";
-    const [listData, setListData] = useState([]);
+function Home_component2(){
+    const [listData, setListData] = useState("");
     useEffect(() => {
-      axios.get("http://localhost:3001/data").then((response) => {
+      const getData = () => {axios.get("http://localhost:3001/data/").then((response) => {
         setListData(response.data);
-      });
+        console.log(listData);
+      });}
+      getData();
     }, []);
     return (
       <div className="Home_component body">
@@ -62,16 +48,10 @@ export default class Home_component extends Component {
                 <img className='planet spin_right' src = {planet} alt={"planet"}></img>
                 <img className='sun spin_right' src={sun} alt={"sun"}></img>
                 
-                if (isBroken){
-                  sat_dop = "_broken"
-                }
-                else{
-                  sat_dop=""
-                }
                 <img  className="satelite spin_onSome" src = {satelite}  alt={"satelite"}></img>
                 
         
       </div>
     );
   }
-}
+export default Home_component2
