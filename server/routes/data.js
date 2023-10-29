@@ -28,11 +28,11 @@ router.put("/changeData", async (req, res) => {
     try {
         data = req.body;
         if (verify(data)) {
-            await fetch('http://localhost:3002/data/', {
+            await fetch('http://localhost:3002/data/changeData', {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
-            })
+            });
         }
     } catch (err) {
         console.log(err);

@@ -6,17 +6,20 @@ let radio = '';
 l1 = 68;
 l = 0;
 counter = 0;
-let height = 16;
+let height = 15;
 let temp = 1000;
 let isWorked = true;
 let inDarkZone = false;
 let inMetiorits = false;
 
 function reboot() {
-    let speed = 1;
-    let height = 4;
-    let temp = 1000;
-    let isWorked = true;
+    speed = 1;
+    height = 10;
+    temp = 1000;
+    isWorked = true;
+    let inDarkZone = false;
+    let inMetiorits = false;
+    console.log("SUCESS REBOOT");
 }
 
 loop();
@@ -27,7 +30,6 @@ function loop() {
     checkTemp();
     chechHeight();
     generateRandomString();
-
 
     setTimeout(() => {
         loop()
@@ -137,14 +139,23 @@ router.get("/", (req, res) => {
     res.json({
         "speed": speed,
         "height": height,
-        "temperature": temp
+        "temperature": temp,
+        "connect": isWorked,
+        "radio": radio
     });
 });
 
-router.put("/", (req, res) => {
-    const data = req.body;
-    speed = data.speed;
-    height = data.height;
+router.put("/changeData",  (req, res) => {
+    const data =  req.body;
+    if("reboot" in data){
+        reboot();
+    }
+    if("speed" in data) {
+        speed = data.speed;
+    }
+    if("height" in data) {
+        height = data.height;
+    }
 });
 
 module.exports = router;
