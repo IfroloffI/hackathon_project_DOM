@@ -7,7 +7,8 @@ import { Component, React } from 'react';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Change_component from './Change_component';
-
+import meteor1 from './img/meteor1.png'
+import meteor2 from './img/meteor2.png'
 
 
 
@@ -70,7 +71,8 @@ export default class Home_component extends Component {
                 }
                 <img  className="satelite spin_onSome" src = {satelite}  alt={"satelite"}></img>
                 
-        
+                <img className = "meteor meteor1" scr = {meteor1} alt = {"meteor1"}></img>
+                <img className = "meteor meteor2" scr = {meteor2} alt = {"meteor2"}></img>
       </div>
     );
   }
